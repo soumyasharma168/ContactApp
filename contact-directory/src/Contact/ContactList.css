@@ -1,0 +1,82 @@
+.contacts-list {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+  }
+  
+  .title {
+    text-align: center;
+    color: #333;
+  }
+  
+  .contact-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .contact-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid 
+  }
+  
+  .contact-info {
+    flex-grow: 1;
+  }
+  
+  .contact-actions button {
+    padding: 5px 10px;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  
+  .btn-edit {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .btn-edit:hover {
+    background-color: #45a049;
+  }
+  
+  .btn-delete {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .btn-delete:hover {
+    background-color: #da190b;
+  }
+  
+  .loading-spinner {
+    text-align: center;
+    font-size: 18px;
+    color: #666;
+  }
+  
+  .error-message {
+    color: #f44336;
+    background-color: #ffe6e6;
+    padding: 10px;
+    border: 1px solid #f44336;
+    margin-bottom: 20px;
+  }
+  
+  table {
+    border-collapse: collapse;
+    /* Ensures borders don't double up */
+    width: 100%;
+  }
+
+  td,
+  th {
+    padding: 10px;
+    /* Adds space inside each cell */
+    border: 1px solid #ddd;
+    /* Optional: Adds a border for clarity */
+    text-align: left;
+  }
