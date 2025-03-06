@@ -16,7 +16,7 @@ builder.Services.AddDbContext<ContactDbContext>(options =>
 
 builder.Services.AddControllers();
 
-var frontendURL = builder.Configuration.GetValue<string>("frontend_url")??"http://localhost:3001";
+var frontendURL = builder.Configuration.GetValue<string>("frontend_url")??"http://localhost:3000";
 
 builder.Services.AddCors(options =>
 {

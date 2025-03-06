@@ -43,3 +43,4 @@
 /Users/soumyasharma/Documents/completeProject/ContactAPI/bin/Debug/net8.0/Microsoft.Extensions.Options.dll
 /Users/soumyasharma/Documents/completeProject/ContactAPI/bin/Debug/net8.0/Microsoft.Extensions.Primitives.dll
 /Users/soumyasharma/Documents/completeProject/ContactAPI/bin/Debug/net8.0/System.Diagnostics.DiagnosticSource.dll
+/Users/soumyasharma/Documents/completeProject/ContactAPI/obj/Debug/net8.0/ContactAPI.sourcelink.json
