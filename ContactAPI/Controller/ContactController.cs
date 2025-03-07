@@ -19,12 +19,13 @@ namespace ContactAPI.Controller
         }
 
         //get: api/contact
+        //Fetches all contact details from the database.
         [HttpGet]
         public  async Task<ActionResult<IEnumerable<ContactDetails>>> Get()
         {
             return await _context.Contacts.ToListAsync();
         }
-
+        
         [HttpGet("{id}")]
         public async Task<ActionResult<ContactDetails>> Get(int id )
         {

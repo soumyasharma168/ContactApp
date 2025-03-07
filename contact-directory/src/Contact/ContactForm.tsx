@@ -39,9 +39,27 @@ export default function(props: ContactFromProps) {
     }
   };
 
+  const handleCancel = (formikProps: any) => {
+     // Immediately reset the contact state to trigger Create mode
+     setContact(undefined);
+
+    // Reset form fields to their initial empty state and switch to Create mode
+    formikProps.resetForm({
+      values: {
+        id: 0,
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        address: '',
+      },
+    });
+  };
+
+
   return (
     <Formik
-      key={props.model?.id} // Force re-render when props.model changes
+      key={contact?.id || 'create'} // Force re-render when props.model changes
       initialValues={{
         id: props.model?.id || 0,
         firstName: props.model?.firstName || '',
@@ -68,13 +86,22 @@ export default function(props: ContactFromProps) {
           <TextField field="phone" displayName="Phone Number" />
           <TextField field="email" displayName="Email" />
           <TextField field="address" displayName="Address" />
+          <div className="d-flex gap-2">
           <Button
             className="btn btn-primary"
             type="submit"
             disabled={formikProps.isSubmitting}
-          >
-            {props.model ? 'Update' : 'Create'}
+           >
+            {contact ? 'Update' : 'Create'}
           </Button>
+          <Button
+            className="btn btn-secondary"
+            type="button"
+            onClick={() => handleCancel(formikProps)} 
+            >
+            Reset
+          </Button>
+          </div>
         </Form>
       )}
     </Formik>

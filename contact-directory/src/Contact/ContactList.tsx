@@ -5,7 +5,7 @@ import ContactForm from './ContactForm';
 import { urlContact } from '../endpoint';
 import './ContactList.css';  // Importing the CSS file for styling
 
-const ContactsList: React.FC = () => {
+export default function ContactList() {
 
   const [contacts, setContacts] = useState<ContactDTO[]>([]);
   const [editingContact, setEditingContact] = useState<ContactDTO>();
@@ -31,10 +31,13 @@ const ContactsList: React.FC = () => {
     fetchContacts();
   }, []);
 
+
+  //Handle the edit task when edit button clicked
   const handleEdit = (contact: ContactDTO) => {
     setEditingContact(contact);
   };
 
+  //Handle delete taskes
   const handleDelete = async (id: number) => {
     if (window.confirm('Are you sure you want to delete this contact?')) {
       try {
@@ -46,7 +49,7 @@ const ContactsList: React.FC = () => {
       }
     }
   };
-
+  
   const handleSave = (contact: ContactDTO) => {
     fetchContacts(); // Refresh the contact list after saving
   };
@@ -82,7 +85,7 @@ const ContactsList: React.FC = () => {
         <td>{contact.phone}</td>
         <td>{contact.email}</td>
         <td>{contact.address}</td>
-        <td>
+        <td className='d-flex gap-1'>
           <button className="btn-edit" onClick={() => handleEdit(contact)}>Edit</button>
           <button className="btn-delete" onClick={() => handleDelete(contact.id)}>Delete</button>
         </td>
@@ -94,4 +97,4 @@ const ContactsList: React.FC = () => {
   );
 };
 
-export default ContactsList;
+
